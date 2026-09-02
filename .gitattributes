@@ -1,0 +1,2 @@
+# Mark generated/distribution-only metadata as documentation where appropriate.
+# GitHub Linguist will still detect project_info.py as Python.
