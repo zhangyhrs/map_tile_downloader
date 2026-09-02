@@ -12,15 +12,35 @@ A desktop workspace for map tiles, historical imagery, satellite scenes and geos
 >
 > Extract the complete ZIP and run the included executable. GitHub's **Source code** archives and **Code → Download ZIP** are not the application package.
 
+## Interface
+
+![MTDL v2.5.1 desktop interface](assets/interface.png)
+
+## Sources, resolution & dates
+
+The application brings together rendered basemaps, historical mosaics, satellite scenes and thematic data. Their resolution and date meanings differ.
+
+| Data family | Examples | What to check |
+|---|---|---|
+| Basemap tiles | Amap, Esri, Google, Tianditu, OSM, Carto, Tencent | Zoom is not native imagery resolution; mosaics may mix dates |
+| Historical imagery | Esri Wayback | Release date is not local capture date |
+| Satellite scenes | Sentinel-2 L2A, Landsat 8/9, MODIS | Native band resolution, acquisition date and local cloud cover |
+| Thematic / elevation | Annual land cover, WorldCover, AW3D30, Copernicus DSM | Reference year, class definitions and original numerical values |
+| Vector features | OSM, Tianditu WFS, OpenBuildingMap, field polygons | Source accuracy and completeness, not a single raster resolution |
+
+**[Detailed source catalogue: resolutions, zoom table, temporal coverage and limitations →](docs/DATA_SOURCES.md)**
+
+> The inspected satellite export workflow creates 8-bit stretched visualization GeoTIFFs and caps the long edge at 4096 pixels. It does **not** preserve original scientific values or guarantee native pixel spacing. Use original provider products for quantitative analysis.
+
 ## Features
 
 | Module | Workflow | Output |
 |---|---|---|
 | Map tiles | Select source and zoom, download and mosaic tiles, select output CRS | GeoTIFF |
 | Historical imagery | Browse Esri Wayback releases with a date slider | GeoTIFF |
-| Satellite imagery | Search configured STAC datasets by area, date and cloud cover; select scenes and bands | GeoTIFF |
+| Satellite imagery | Search configured STAC datasets by area, date and cloud cover; select scenes and bands | Visualization GeoTIFF |
 | Vector data | Configured Tianditu WFS, OpenStreetMap/Overpass and OpenBuildingMap sources | GeoJSON |
-| Land cover | Configured IO-LULC, ESA WorldCover and MODIS products with available years | GeoTIFF |
+| Land cover | IO-LULC and ESA WorldCover; MODIS entry requires configuration correction/validation | GeoTIFF |
 | Field boundaries | Configured Fields of the World data for the selected extent | GeoJSON / GeoPackage |
 | Elevation | Calculate required JAXA AW3D30 tiles, download and optionally extract | DEM archives / rasters |
 | Time-series GIF | Build animations from local GeoTIFF sequences, with optional date labels | GIF |

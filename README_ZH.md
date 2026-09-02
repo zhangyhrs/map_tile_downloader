@@ -12,15 +12,35 @@
 >
 > 下载后完整解压，运行包内 EXE。不要将 GitHub 自动生成的 **Source code** 或 **Code → Download ZIP** 当作程序包。
 
+## 软件界面
+
+![MTDL v2.5.1 软件界面](assets/interface.png)
+
+## 图源、分辨率与时相
+
+软件整合底图、历史影像、卫星场景和专题数据，但不同数据的“分辨率”和“日期”含义不同。
+
+| 数据类别 | 示例 | 选用时重点检查 |
+|---|---|---|
+| 底图瓦片 | 高德、Esri、Google、天地图、OSM、Carto、腾讯 | 层级不等于原始影像分辨率，拼接底图可能混合时相 |
+| 历史影像 | Esri Wayback | 版本发布日期不等于当地拍摄日期 |
+| 卫星场景 | Sentinel-2 L2A、Landsat 8/9、MODIS | 原始波段分辨率、拍摄日期及选区实际云量 |
+| 专题 / 高程 | 年度土地覆盖、WorldCover、AW3D30、Copernicus DSM | 参考年度、类别定义与原始数值是否保留 |
+| 矢量要素 | OSM、天地图 WFS、OpenBuildingMap、农田地块 | 来源精度与完整性，不能统一标注栅格分辨率 |
+
+**[查看详细图源目录：分辨率、层级换算、时相与使用限制 →](docs/DATA_SOURCES_ZH.md)**
+
+> 所检查的卫星导出流程会进行 8 位拉伸，并将长边限制到 4096 像素，属于可视化 GeoTIFF，**不保留原始科学数值，也不保证原始像元间距**。定量分析请使用提供方原始产品。
+
 ## 主要功能
 
 | 模块 | 操作内容 | 输出 |
 |---|---|---|
 | 底图瓦片 | 选择图源和层级，下载并拼接瓦片，可选输出坐标系 | GeoTIFF |
 | 历史影像 | 加载 Esri Wayback 版本清单，通过日期滑块选择版本 | GeoTIFF |
-| 卫星影像 | 按范围、日期、云量检索配置的 STAC 数据集，选择场景与波段下载 | GeoTIFF |
+| 卫星影像 | 按范围、日期、云量检索配置的 STAC 数据集，选择场景与波段下载 | 可视化 GeoTIFF |
 | 矢量数据 | 获取配置的天地图 WFS、OSM/Overpass、OpenBuildingMap 数据 | GeoJSON |
-| 土地覆盖 | 选择配置的 IO-LULC、ESA WorldCover、MODIS 产品及可用年份 | GeoTIFF |
+| 土地覆盖 | IO-LULC、ESA WorldCover；MODIS 入口配置待纠正与验证 | GeoTIFF |
 | 农田地块 | 按范围获取配置的 Fields of the World 地块数据 | GeoJSON / GeoPackage |
 | 高程数据 | 计算 JAXA AW3D30 所需图幅，下载并可选自动解压 | DEM 压缩包 / 栅格 |
 | 时序 GIF | 由本地 GeoTIFF 序列制作动画，可叠加日期标签 | GIF |
