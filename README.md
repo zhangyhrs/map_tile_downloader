@@ -122,11 +122,19 @@ The checksum is GitHub's reported asset digest. A matching hash checks download 
 
 ## Follow & connect
 
-Surveying, remote sensing and GIS resources. Click an image to view the full-size QR code.
+Surveying, remote sensing and GIS resources.
 
 <table>
-<tr><th width="50%">WeChat Official Account<br>测绘地信</th><th width="50%">Knowledge Planet<br>测绘地理信息共享中心</th></tr>
-<tr><td align="center" valign="middle"><a href="assets/wechat-official-account.png"><img src="assets/wechat-official-account.png" alt="测绘地信微信公众号二维码" height="140"></a></td><td align="center" valign="middle"><a href="assets/knowledge-planet.jpg"><img src="assets/knowledge-planet.jpg" alt="测绘地理信息共享中心知识星球二维码" height="140"></a></td></tr>
+  <tr>
+    <th width="33%">WeChat Official Account<br>微信公众号：测绘地信</th>
+    <th width="33%">WeChat Mini Program<br>微信小程序：测绘地信</th>
+    <th width="33%">Knowledge Planet<br>知识星球：测绘地理信息共享中心</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-official-account.png" alt="微信公众号：测绘地信" height="150"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-mini-program.jpg" alt="微信小程序：测绘地信" height="150"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/knowledge-planet.jpg" alt="知识星球：测绘地理信息共享中心" height="150"></td>
+  </tr>
 </table>
 
 **Zhang Y.H.** · [@zhangyhrs](https://github.com/zhangyhrs)
